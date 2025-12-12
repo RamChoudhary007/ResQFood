@@ -1,7 +1,7 @@
 # ResQFood
 
 <!-- <img src="img/coverimage.jpeg"> -->
-<p>  The basic concept of this project ResQFood is to collect theexcess/leftover food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people .</p>
+<p>  The basic concept of this project ResQFood is to collect the excess/leftover food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people .</p>
 <h2>Tools and Technologies</h2> 
 <ul>
  <li>Frontend : HTML, CSS, JavaScript</li>
