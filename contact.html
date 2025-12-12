@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQFood</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+</head>
+
+
+<body>
+	<header>
+        <div class="logo"><a href="home.html">ResQ<b style="color: #06C167;">Food</b></a></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" >Home</a></li>
+                <li><a href="about.html" >About</a></li>
+                <li> <a href="contact.html" class="active">Feedback</a> </li>
+                <li><a href="home.html#help">Help</a></li>
+                <li><a href="profile.php" >Profile</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <script>
+        hamburger=document.querySelector(".hamburger");
+        hamburger.onclick =function(){
+            navBar=document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <section class="cover" >
+        
+    </section>
+	<p class="heading" style=" margin: 20px;">Give Your Feedback Here ↓</p>
+    
+     
+	
+   <!-- <h1 class="heading">Contact Us</h1>  -->
+   <div class="contact-form"> 
+    <form action="feedback.php" method="post"> <label for="name">Name:</label> 
+     <input type="text" id="name" name="name">
+     <br> <label for="email">Email:</label> 
+     <input type="email" id="email" name="email">
+     <br> <label for="message">Message:</label> <textarea id="message" name="message"></textarea>
+     <br> 
+     <input type="submit" value="Send" name="send" id="sendBtn" disabled> 
+    </form> 
+    <script>
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const sendBtn = document.getElementById('sendBtn');
+
+      // Create error message element
+      const errorMsg = document.createElement('p');
+      errorMsg.style.color = 'red';
+      errorMsg.style.display = 'none';
+      errorMsg.textContent = 'Please fill in all fields before submitting.';
+      sendBtn.parentNode.insertBefore(errorMsg, sendBtn.nextSibling);
+
+      function validateForm() {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (
+          nameInput.value.trim() !== '' &&
+          emailInput.value.trim() !== '' &&
+          emailPattern.test(emailInput.value.trim()) &&
+          messageInput.value.trim() !== ''
+        ) {
+          sendBtn.disabled = false;
+          errorMsg.style.display = 'none';
+        } else {
+          sendBtn.disabled = true;
+        }
+      }
+
+      // Show error message if submit clicked without filling fields
+      sendBtn.form.addEventListener('submit', function(event) {
+        if (sendBtn.disabled) {
+          event.preventDefault();
+          errorMsg.style.display = 'block';
+        }
+      });
+
+      nameInput.addEventListener('input', validateForm);
+      emailInput.addEventListener('input', validateForm);
+      messageInput.addEventListener('input', validateForm);
+    </script>
+   </div> 
+   <div class="contact-info" style="padding: 10px;"> 
+    <p>Email: fooddonate@gmail.com</p> 
+    <p>Phone: +91 95878 23725</p> 
+    <p>Address: C.B. Patel Computer College</p> 
+   </div> 
+
+  
+       
+	</div>
+  
+  </div>
+ 
+    
+</body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {  
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+</html>
